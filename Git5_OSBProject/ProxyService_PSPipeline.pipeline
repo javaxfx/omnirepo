@@ -39,12 +39,23 @@
                         <con4:destination ref="Git5_OSBProject/AlertDestination"/>
                         <con4:severity>normal</con4:severity>
                     </con4:alert>
-                    <con5:delete varName="body">
-                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73ef</con2:id>
-                        <con5:location>
-                            <con2:xpathText>.</con2:xpathText>
-                        </con5:location>
-                    </con5:delete>
+                    <con5:assign varName="body">
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73e0</con2:id>
+                        <con5:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con5:expr>
+                    </con5:assign>
+                    <con3:log>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73dc</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                        <con3:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con3:expr>
+                        <con3:message>[Orange][Git5_PS][Entry]</con3:message>
+                    </con3:log>
+                    <con2:reply>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73e3</con2:id>
+                    </con2:reply>
                 </con:actions>
             </con:stage>
         </con:pipeline>
@@ -59,7 +70,18 @@
                     <con1:route>
                         <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N7403</con2:id>
                         <con1:service ref="Git5_OSBProject/BusinessService_BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:outboundTransform/>
+                        <con1:outboundTransform>
+                            <con5:insert varName="outbound">
+                                <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73d9</con2:id>
+                                <con5:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con5:location>
+                                <con5:where>first-child</con5:where>
+                                <con5:expr>
+                                    <con2:xqueryText>$inbound/ctx:transport/ctx:request/http:http-method</con2:xqueryText>
+                                </con5:expr>
+                            </con5:insert>
+                        </con1:outboundTransform>
                         <con1:responseTransform/>
                     </con1:route>
                 </con:actions>
