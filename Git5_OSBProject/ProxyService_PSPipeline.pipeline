@@ -127,6 +127,9 @@
                             <con2:xpathText>.</con2:xpathText>
                         </con5:location>
                     </con5:delete>
+                    <con2:reply>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N712c</con2:id>
+                    </con2:reply>
                 </con:actions>
             </con:stage>
         </con:pipeline>
