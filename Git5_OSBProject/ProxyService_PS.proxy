@@ -22,7 +22,9 @@
         </tran:URI>
         <tran:inbound-properties/>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">
-            <http:inbound-properties/>
+            <http:inbound-properties>
+                <http:use-https>true</http:use-https>
+            </http:inbound-properties>
             <http:compression>
                 <http:compression-support>false</http:compression-support>
             </http:compression>
