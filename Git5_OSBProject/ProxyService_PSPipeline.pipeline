@@ -19,6 +19,17 @@
                         <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73f9</con2:id>
                         <con3:logLevel>debug</con3:logLevel>
                     </con3:log>
+                    <con5:delete varName="body">
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73e9</con2:id>
+                        <con5:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con5:location>
+                    </con5:delete>
+                    <con5:Error>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73e6</con2:id>
+                        <con5:errCode>404</con5:errCode>
+                        <con5:message>Not Found</con5:message>
+                    </con5:Error>
                 </con:actions>
             </con:stage>
         </con:pipeline>
