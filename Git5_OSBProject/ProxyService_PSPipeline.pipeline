@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con4="http://www.bea.com/wli/sb/stages/alert/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="Native REST" xsi:type="con:NativeRestBindingType"/>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-a004b01.N4b91e4b8.0.1703b18b985.N7402">
+            <con:stage id="_StageId-a004b01.N4b91e4b8.0.1703b18b985.N7400" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con3:log>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73fc</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                    </con3:log>
+                    <con3:log>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73f9</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                    </con3:log>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a004b01.N4b91e4b8.0.1703b18b985.N7401">
+            <con:stage id="_StageId-a004b01.N4b91e4b8.0.1703b18b985.N73ff" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+            <con:stage id="_StageId-a004b01.N4b91e4b8.0.1703b18b985.N73f6" name="Stage2">
+                <con:context/>
+                <con:actions>
+                    <con3:log>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73f5</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                    </con3:log>
+                    <con4:alert>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73ec</con2:id>
+                        <con4:destination ref="Git5_OSBProject/AlertDestination"/>
+                        <con4:severity>normal</con4:severity>
+                    </con4:alert>
+                    <con5:delete varName="body">
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N73ef</con2:id>
+                        <con5:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con5:location>
+                    </con5:delete>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node1">
+                <con:request>request-a004b01.N4b91e4b8.0.1703b18b985.N7402</con:request>
+                <con:response>response-a004b01.N4b91e4b8.0.1703b18b985.N7401</con:response>
+            </con:pipeline-node>
+            <con:route-node name="RouteNode1">
+                <con:context/>
+                <con:actions>
+                    <con1:route>
+                        <con2:id>_ActionId-a004b01.N4b91e4b8.0.1703b18b985.N7403</con2:id>
+                        <con1:service ref="Git5_OSBProject/BusinessService_BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:outboundTransform/>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
