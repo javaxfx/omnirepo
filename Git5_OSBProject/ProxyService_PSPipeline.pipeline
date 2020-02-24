@@ -133,7 +133,23 @@
                 </con:actions>
             </con:stage>
         </con:pipeline>
+        <con:pipeline type="request" name="request-a004b01.N4b91e4b8.0.1703b18b985.N67d1">
+            <con:stage id="_StageId-a004b01.N4b91e4b8.0.1703b18b985.N67cf" name="Stage Testing Request">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a004b01.N4b91e4b8.0.1703b18b985.N67d0">
+            <con:stage id="_StageId-a004b01.N4b91e4b8.0.1703b18b985.N67ce" name="Stage Testing Response">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
         <con:flow>
+            <con:pipeline-node name="Pipeline Pair Node [Testing]">
+                <con:request>request-a004b01.N4b91e4b8.0.1703b18b985.N67d1</con:request>
+                <con:response>response-a004b01.N4b91e4b8.0.1703b18b985.N67d0</con:response>
+            </con:pipeline-node>
             <con:pipeline-node name="Pipeline Pair Node2">
                 <con:request>request-a004b01.N4b91e4b8.0.1703b18b985.N73d8</con:request>
                 <con:response>response-a004b01.N4b91e4b8.0.1703b18b985.N73d7</con:response>
