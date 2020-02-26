@@ -28,6 +28,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="Git5_OSBProject/Git5_OSBProject.jpr"/></hash>
+      <hash><url n="URL" path="Git6_OSBProject/Git6_OSBProject.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
