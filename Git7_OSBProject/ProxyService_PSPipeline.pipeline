@@ -32,7 +32,14 @@
         <con:pipeline type="response" name="response-a004b01.f2742f4.0.170ca3205f3.N7f9d">
             <con:stage id="_StageId-a004b01.f2742f4.0.170ca3205f3.N7f9b" name="Stage1">
                 <con:context/>
-                <con:actions/>
+                <con:actions>
+                    <con1:replace varName="body">
+                        <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7ffb</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
             </con:stage>
         </con:pipeline>
         <con:flow>
