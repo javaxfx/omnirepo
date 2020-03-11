@@ -17,6 +17,15 @@
                             <con2:xqueryText>'Value'</con2:xqueryText>
                         </con1:expr>
                     </con1:assign>
+                    <con1:replace varName="body">
+                        <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7ffe</con2:id>
+                        <con1:location>
+                            <con2:xpathText>.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
                 </con:actions>
             </con:stage>
         </con:pipeline>
