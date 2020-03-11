@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config">
     <con:coreEntry>
         <con:binding type="Native REST" xsi:type="con:NativeRestBindingType"/>
         <con:xqConfiguration>
@@ -10,7 +10,14 @@
         <con:pipeline type="request" name="request-a004b01.f2742f4.0.170ca3205f3.N7f9e">
             <con:stage id="_StageId-a004b01.f2742f4.0.170ca3205f3.N7f9c" name="Stage1">
                 <con:context/>
-                <con:actions/>
+                <con:actions>
+                    <con1:assign varName="param1">
+                        <con2:id>_ActionId-a004b01.f2742f4.0.170ca3205f3.N7f2b</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>'Value'</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                </con:actions>
             </con:stage>
         </con:pipeline>
         <con:pipeline type="response" name="response-a004b01.f2742f4.0.170ca3205f3.N7f9d">
@@ -27,7 +34,7 @@
             <con:route-node name="RouteNode1">
                 <con:context/>
                 <con:actions>
-                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
                         <con2:id>_ActionId-a004b01.f2742f4.0.170ca3205f3.N7f30</con2:id>
                         <con1:service ref="Git6_OSBProject/BusinessService2_BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:outboundTransform>
