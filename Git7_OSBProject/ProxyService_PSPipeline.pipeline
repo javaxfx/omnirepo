@@ -26,6 +26,27 @@
                             <con2:xqueryText>$body</con2:xqueryText>
                         </con1:expr>
                     </con1:replace>
+                    <con5:ifThenElse xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/alert/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+
+                        <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7fc0</con2:id>
+                        <con5:case id="_BranchId-a004b01.62aa0d18.0.170ca478d03.N7fbf">
+
+                            <con5:condition>
+                                <con2:xqueryText>$flagTest = "POST"</con2:xqueryText>
+                            </con5:condition>
+                            <con5:actions>
+                                <con5:assign varName="omniMessage">
+
+                                    <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7fbe</con2:id>
+
+                                    <con5:expr>
+                                        <con2:xqueryText>"Operation : POST"</con2:xqueryText>
+                                    </con5:expr>
+                                </con5:assign>
+                            </con5:actions>
+                        </con5:case>
+                        <con5:default/>
+                    </con5:ifThenElse>
                 </con:actions>
             </con:stage>
         </con:pipeline>
@@ -52,7 +73,7 @@
                 <con:actions>
                     <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
                         <con2:id>_ActionId-a004b01.f2742f4.0.170ca3205f3.N7f30</con2:id>
-                        <con1:service ref="Git6_OSBProject/BusinessService2_BS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:service ref="Git7_OSBProject/ProxyService_PSPipeline" xsi:type="con:PipelineRef"/>
                         <con1:outboundTransform>
                             <con3:insert varName="body">
                                 <con2:id>_ActionId-a004b01.f2742f4.0.170ca3205f3.N7f2f</con2:id>
