@@ -53,11 +53,6 @@
                         <con3:logLevel>debug</con3:logLevel>
                         <con3:message>Log_in_Response_to_Rollback_Next..</con3:message>
                     </con3:log>
-                    <con3:log>
-                        <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7f47</con2:id>
-                        <con3:logLevel>debug</con3:logLevel>
-                        <con3:message>Log_in_Response_to_Rollback_Next..2</con3:message>
-                    </con3:log>
                 </con:actions>
             </con:stage>
         </con:pipeline>
