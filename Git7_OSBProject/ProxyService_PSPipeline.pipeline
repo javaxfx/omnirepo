@@ -29,7 +29,7 @@
                     <con3:log>
                         <con2:id>_ActionId-a004b01.62aa0d18.0.170ca478d03.N7f7e</con2:id>
                         <con3:logLevel>debug</con3:logLevel>
-                        <con3:message>Branch1_Replace1</con3:message>
+                        <con3:message>Branch1_Replace1_with_changes</con3:message>
                     </con3:log>
                 </con:actions>
             </con:stage>
